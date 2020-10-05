@@ -1,5 +1,5 @@
 {
-  "name": "react-boilerplate",
+  "name": "transcriber",
   "version": "1.0.0",
   "description": "A simple boilerplate for bootstrapping a new React application",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jacobparis/react-boilerplate.git"
+    "url": "git+https://github.com/jacobparis/transcriber.git"
   },
   "author": "Jacob Paris",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jacobparis/react-boilerplate/issues"
+    "url": "https://github.com/jacobparis/transcriber/issues"
   },
-  "homepage": "https://github.com/jacobparis/react-boilerplate#readme",
+  "homepage": "https://github.com/jacobparis/transcriber#readme",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-optional-chaining": "^7.10.1",
