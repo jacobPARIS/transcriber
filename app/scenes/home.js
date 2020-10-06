@@ -3,6 +3,7 @@ export default function HomeScene() {
   const [input, setInput] = React.useState('')
   const [includedUsers, setIncludedUsers] = React.useState(new Set())
   const [unquotedUsers, setUnquotedUsers] = React.useState(new Set())
+  const [hideNames, setHideNames] = React.useState(false)
 
   const output = input
     .split(/\n(?=.*(?:[AP]M|\d\d\/\d\d\/2020)\n)/g)
@@ -95,6 +96,20 @@ export default function HomeScene() {
           })}
       </div>
       <br />
+      <div>
+        <strong> Options </strong>
+
+        <div>
+          <input
+            type="checkbox"
+            id="hide-names"
+            checked={hideNames}
+            onChange={() => setHideNames((hideNames) => !hideNames)}
+          />
+          <label htmlFor="hide-names"> Hide names </label>
+        </div>
+      </div>
+      <br />
       <strong> Transcript </strong>
       <div className="align-self-stretch">
         <pre className="whitespace-pre-wrap">
@@ -103,7 +118,9 @@ export default function HomeScene() {
             .map((message) => {
               return (
                 <div key={message.lines} className="pb-3">
-                  {unquotedUsers.has(message.author) ? '' : message.author}
+                  {hideNames || unquotedUsers.has(message.author)
+                    ? ''
+                    : message.author}
                   <br />
                   <div>
                     {message.lines.map((line) => (
@@ -113,6 +130,7 @@ export default function HomeScene() {
                       </div>
                     ))}
                   </div>
+                  <br />
                 </div>
               )
             })}
