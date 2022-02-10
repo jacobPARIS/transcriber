@@ -6,7 +6,7 @@ export default function HomeScene() {
   const [hideNames, setHideNames] = React.useState(false)
 
   const output = input
-    .split(/\n(?=.*(?:[AP]M|\d\d\/\d\d\/2020)\n)/g)
+    .split(/\n(?=.*(?:[AP]M|\d\d\/\d\d\/2022)\n)/g)
     .map((i) => (console.log(i), i))
     .filter(Boolean)
     .map((message) => {
@@ -16,7 +16,7 @@ export default function HomeScene() {
         ? heading.split('Today')
         : heading.includes('Yesterday')
         ? heading.split('Yesterday')
-        : heading.split(/\d\d\/\d\d\/2020/)
+        : heading.split(/\d\d\/\d\d\/2022/)
 
       return {
         author,
